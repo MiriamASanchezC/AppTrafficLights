@@ -23,11 +23,13 @@
                                 <rect key="frame" x="29" y="74" width="335" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="fQr-G8-OWM"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="216" id="lWe-je-n2D"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGv-AD-cme">
                                 <rect key="frame" x="77" y="617" width="239" height="169"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="dGv-AD-cme" secondAttribute="height" multiplier="239:169" id="VbU-F7-H1b"/>
                                     <constraint firstAttribute="width" secondItem="dGv-AD-cme" secondAttribute="height" multiplier="239:169" id="nn0-gB-KWR"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>

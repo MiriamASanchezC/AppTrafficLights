@@ -29,13 +29,21 @@
         self.trafficLight.image = [UIImage imageNamed:@"trafficLight1"];
         [timer invalidate];
         //iniciar el timer del contador
-        scoreTimer = [NSTimer scheduledTimerWithTimeInterval:0.0001 target:self selector:@selector(scoreCounter) userInfo:nil repeats:YES];
+        scoreTimer = [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(scoreCounter) userInfo:nil repeats:YES];
+        UIFont *futuraBoldFont = [UIFont fontWithName:@"Futura Bold" size:40.0];
+        NSDictionary *attibutes = @{NSFontAttributeName:futuraBoldFont};
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc]initWithString:@"Stop" attributes:attibutes];
+        [self.startButton setAttributedTitle:attributedTitle forState:UIControlStateNormal];
+    }
+    //self.startButton.titleLabel.font = [UIFont fontWithName:@"Farah Regular" size:40.0];
+      //  [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
+     //   [self.startButton setFont:[UIFont systemFontOfSize:40]];
     }
    
     
     
     
-}
+
 -(void)scoreCounter{
     scoreInt ++;
     self.scoreLabel.text = [NSString stringWithFormat:@"%i",scoreInt];
@@ -46,6 +54,8 @@
     if (scoreInt == 0) {
         timerInt = 3;
         timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startTimer) userInfo:nil repeats:YES];
+    }else{
+        [scoreTimer invalidate];
     }
 }
 @end
