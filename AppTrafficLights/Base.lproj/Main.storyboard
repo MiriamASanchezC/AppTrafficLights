@@ -1,24 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="e13-yG-bGL">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="bng-w0-S57">
+                                <rect key="frame" x="29" y="74" width="335" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="fQr-G8-OWM"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGv-AD-cme">
+                                <rect key="frame" x="77" y="617" width="239" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dGv-AD-cme" secondAttribute="height" multiplier="239:169" id="nn0-gB-KWR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start">
+                                    <backgroundConfiguration key="background" image="stopButton"/>
+                                    <fontDescription key="titleFontDescription" name="Farah" family="Farah" pointSize="40"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2b-1B-raZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvJ-ra-mdY">
+                                <rect key="frame" x="29" y="309" width="325" height="82"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="63"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dGv-AD-cme" secondAttribute="bottom" constant="32" id="0Cx-l6-tMx"/>
+                            <constraint firstAttribute="bottom" secondItem="e13-yG-bGL" secondAttribute="bottom" id="6Yl-qt-r1M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGv-AD-cme" secondAttribute="trailing" constant="77" id="99A-bz-ezX"/>
+                            <constraint firstItem="dGv-AD-cme" firstAttribute="top" secondItem="GvJ-ra-mdY" secondAttribute="bottom" constant="226" id="9ju-HX-Zyf"/>
+                            <constraint firstItem="GvJ-ra-mdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="Gs7-Pi-Qg9"/>
+                            <constraint firstItem="GvJ-ra-mdY" firstAttribute="top" secondItem="bng-w0-S57" secondAttribute="bottom" constant="19" id="W0u-Sx-bmD"/>
+                            <constraint firstItem="e13-yG-bGL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WY3-7b-BFn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GvJ-ra-mdY" secondAttribute="trailing" constant="39" id="bvv-OV-8Ag"/>
+                            <constraint firstItem="dGv-AD-cme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="drU-fo-OJS"/>
+                            <constraint firstItem="bng-w0-S57" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="e5z-sT-srI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bng-w0-S57" secondAttribute="trailing" constant="29" id="fJV-7V-VWY"/>
+                            <constraint firstItem="bng-w0-S57" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="muo-Tn-Bkm"/>
+                            <constraint firstItem="e13-yG-bGL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vty-C4-zL9"/>
+                            <constraint firstItem="e13-yG-bGL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zH1-Fc-e50"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="GvJ-ra-mdY" id="jw4-f3-MRi"/>
+                        <outlet property="startButton" destination="dGv-AD-cme" id="Vz2-A5-Pt0"/>
+                        <outlet property="trafficLight" destination="bng-w0-S57" id="eUA-rJ-Sch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="1600" height="900"/>
+        <image name="stopButton" width="1000" height="1000"/>
+        <image name="trafficLight" width="1500" height="600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
